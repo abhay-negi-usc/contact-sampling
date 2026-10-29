@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.vscode/
+outputs/
+# regenerated from the meshes on first use (hook_linking.py)
+assets/hook/centrelines.npz
