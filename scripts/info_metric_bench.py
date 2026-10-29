@@ -52,7 +52,7 @@ def noisy(poses, std, rng):
 
 def sample_poses(stream, step, noise, bias, max_samples, seed):
     """(poses used, their indices, their policy steps, rng after the noise draws) of a stream at a policy step;
-    the bench and info_metric_extras.py draw the same noise from the same seed."""
+    callers given the same seed draw the same noise, so their cases pair with the bench's."""
     k = int(stream["counts"][min(step, len(stream["counts"]) - 1)])
     idx = np.unique(np.linspace(0, k - 1, min(k, max_samples)).astype(int)) if k else np.zeros(0, int)
     rng = np.random.default_rng(seed)
